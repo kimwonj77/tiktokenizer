@@ -31,6 +31,7 @@ const PRICING: Record<string, BN> = {
   "gpt-4": BN("0.03").div(1000),
   "gpt-4-1106-preview": BN("0.01").div(1000),
   "gpt-4-32k": BN("0.03").div(1000),
+  "gpt-4o": BN("0.005").div(1000),
   "gpt-3.5-turbo": BN("0.0010").div(1000),
   "gpt-3.5-instruct": BN("0.0015").div(1000),
 };
@@ -91,7 +92,7 @@ export function TokenViewer(props: {
             className={cn(
               "transition-all",
               (indexHover == null || indexHover === idx) &&
-                COLORS[idx % COLORS.length],
+              COLORS[idx % COLORS.length],
               props.isFetching && "opacity-50"
             )}
           >
@@ -124,7 +125,7 @@ export function TokenViewer(props: {
                       className={cn(
                         "transition-colors",
                         indexHover === segmentIdx &&
-                          COLORS[segmentIdx % COLORS.length]
+                        COLORS[segmentIdx % COLORS.length]
                       )}
                     >
                       {token.id}
